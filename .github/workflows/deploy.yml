@@ -43,3 +43,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./frontend/dist
+          allow_empty_commit: true
+          keep_files: true
