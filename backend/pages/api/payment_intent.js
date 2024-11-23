@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     try {
       const { amount } = req.body;
 
-      // Create a PaymentIntent with the specified amount
+      // Create a PaymentIntent with the specified amount.
       const paymentIntent = await stripe.paymentIntents.create({
         amount,
         currency: "cad",
