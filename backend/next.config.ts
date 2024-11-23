@@ -4,4 +4,15 @@ const nextConfig = {
   /* additional config options here */
 };
 
-module.exports = nextConfig;
+const outputConfig = {
+  // Generate a static export
+  trailingSlash: true,
+
+  // Set the output directory for the export
+  distDir: "out",
+};
+
+module.exports = {
+  ...nextConfig,
+  ...outputConfig,
+};
