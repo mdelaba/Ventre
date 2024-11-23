@@ -1,4 +1,7 @@
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+const fee = parseFloat(process.env.FEE);
+const escrowAccountID = process.env.ESCROW_ACCOUNT_ID;
+const revenueAccountID = process.env.REVENUE_ACCOUNT_ID;
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
@@ -10,6 +13,29 @@ export default async function handler(req, res) {
         amount,
         currency: "cad",
         payment_method_types: ["card"],
+      });
+
+      // Confirm the payment intent
+      const confirmedPaymentIntent = await stripe.paymentIntents.confirm(
+        paymentIntentId,
+        { payment_method: paymentIntent.payment_method }
+      );
+
+      // Calculate amounts to transfer
+      const totalAmount = paymentIntent.amount;
+      const escrowAmount = totalAmount * (1 - fee);
+      const revenueAmount = totalAmount * fee;
+
+      // Transfer to escrow account
+      await stripe.transfers.create({
+        amount: escrowAmount,
+        destination: escrowAccountID,
+      });
+
+      // Transfer to other account
+      await stripe.transfers.create({
+        amount: revenueAmount,
+        destination: revenueAccountID,
       });
 
       res.status(200).json({ clientSecret: paymentIntent.client_secret });
