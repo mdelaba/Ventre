@@ -27,7 +27,6 @@ jobs:
         run: |
           cd backend
           npm run build
-          npm run export
 
       - name: Install dependencies for Frontend
         run: |
