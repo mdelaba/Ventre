@@ -3,6 +3,8 @@ const fee = parseFloat(process.env.FEE);
 const escrowAccountID = process.env.ESCROW_ACCOUNT_ID;
 const revenueAccountID = process.env.REVENUE_ACCOUNT_ID;
 
+console.log(fee, escrowAccountID, revenueAccountID);
+
 export default async function handler(req, res) {
   if (req.method === "POST") {
     try {
@@ -17,7 +19,7 @@ export default async function handler(req, res) {
 
       // Confirm the payment intent
       const confirmedPaymentIntent = await stripe.paymentIntents.confirm(
-        paymentIntentId,
+        paymentIntent.id,
         { payment_method: paymentIntent.payment_method }
       );
 
