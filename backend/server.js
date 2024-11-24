@@ -12,7 +12,7 @@ app.prepare().then(() => {
   // Use the CORS middleware
   server.use(
     cors({
-      origin: "http://localhost:5173", // Replace with your frontend's origin
+      origin: "http://localhost:3001", // Replace with your frontend's origin
     })
   );
 
