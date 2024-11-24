@@ -12,7 +12,7 @@ app.prepare().then(() => {
   // Use the CORS middleware
   server.use(
     cors({
-      origin: "http://localhost:3001", // Replace with your frontend's origin
+      origin: "https://ventre-41873.web.app", // Replace with your frontend's origin
     })
   );
 
@@ -26,7 +26,7 @@ app.prepare().then(() => {
     return handle(req, res);
   });
 
-  const port = 3000;
+  const port = 8080;
   server.listen(port, (err) => {
     if (err) throw err;
     console.log(`> Ready on http://localhost:${port}`);
