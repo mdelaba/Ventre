@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import {
   Elements,
@@ -35,16 +35,21 @@ const PaymentForm = () => {
     } else {
       console.log("Payment Method:", paymentMethod);
 
-      const response = await fetch("http://localhost:3000/api/payment_intent", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          paymentMethodId: paymentMethod.id,
-          amount: 100,
-        }),
-      });
+      const amountPayable = 100; // in cents
+
+      const response = await fetch(
+        "https://createpaymentintent-oqo3llm6oq-uc.a.run.app",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: new URLSearchParams({
+            paymentMethodId: paymentMethod.id,
+            amount: amountPayable,
+          }).toString(), // Convert to URL-encoded string
+        }
+      );
 
       const responseData = await response.json();
     }
@@ -78,10 +83,53 @@ const cardStyle = {
   },
 };
 
-const App = () => (
-  <Elements stripe={stripePromise}>
-    <PaymentForm />
-  </Elements>
-);
+const Login = () => {
+  const [name, setName] = useState("");
+  const [address, setAddress] = useState("");
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const response = await fetch("https://adduser-oqo3llm6oq-uc.a.run.app", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams({
+        name,
+        address,
+      }).toString(), // Convert to URL-encoded string
+    });
+
+    const responseData = await response.json();
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        placeholder="Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Location"
+        value={address}
+        onChange={(e) => setAddress(e.target.value)}
+      />
+      <button type="submit">Login</button>
+    </form>
+  );
+};
+
+const App = () => {
+  return (
+    <Elements stripe={stripePromise}>
+      <Login />
+      <PaymentForm />
+    </Elements>
+  );
+};
 
 export default App;
