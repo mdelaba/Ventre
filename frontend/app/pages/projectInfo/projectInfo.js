@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import styles from "./tabs.module.css";
+import styles from "../../components/tabs/tabs.module.css";
+import ManufactureType from "./manufactureType/manufactureType";
+import ProjectDescription from "./projectDescription/projectDescription";
 
-const Tabs = () => {
+const ProjectInfo = () => {
   const [activeTab, setActiveTab] = useState(1);
 
   const handleTabClick = (tabIndex) => {
@@ -9,7 +11,7 @@ const Tabs = () => {
   };
 
   return (
-    <div className={styles.tabsContainer}>
+    <div className={styles.container}>
       <div className={styles.tabs}>
         <div
           className={`${styles.tab} ${activeTab === 1 ? styles.active : ""}`}
@@ -25,6 +27,13 @@ const Tabs = () => {
           Project Description
         </div>
         <div className={styles.divider}></div>
+        <div className={styles.divider}></div>
+        <div className={styles.divider}></div>
+        <div className={styles.divider}></div>
+        <div className={styles.divider}></div>
+        <div className={styles.divider}></div>
+        <div className={styles.divider}></div>
+
         <div
           className={`${styles.tab} ${activeTab === 3 ? styles.active : ""}`}
           onClick={() => handleTabClick(3)}
@@ -34,12 +43,12 @@ const Tabs = () => {
       </div>
 
       <div className={styles.tabContent}>
-        {activeTab === 1 && <p>Content for Manufacture Type</p>}
-        {activeTab === 2 && <p>Content for Project Description</p>}
+        {activeTab === 1 && <ManufactureType />}
+        {activeTab === 2 && <ProjectDescription />}
         {activeTab === 3 && <p>Content for Upload Manufacture Files</p>}
       </div>
     </div>
   );
 };
 
-export default Tabs;
+export default ProjectInfo;

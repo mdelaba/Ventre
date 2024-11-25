@@ -1,0 +1,78 @@
+.options-container {
+  display: flex; /* Enables flexbox layout */
+  flex-direction: column; /* Aligns children vertically */
+  gap: 30px; /* Adjust gap between elements */
+  padding: 30px;
+}
+
+.dropdown-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between label and dropdown */
+  font-family: Arial, sans-serif;
+}
+
+.dropdown-label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.dropdown {
+  position: relative;
+  display: flex; /* Ensures child elements are flex items */
+  align-items: center; /* Vertically centers items */
+  justify-content: center; /* Optional: centers horizontally if needed */
+}
+
+.dropdown-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px;
+}
+
+.dropdown-button:hover {
+  background-color: #45a049;
+}
+
+.dropdown-arrow {
+  margin-left: 10px;
+  font-size: 12px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  list-style: none; /* Removes bullet points */
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+}
+
+.dropdown-item {
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}

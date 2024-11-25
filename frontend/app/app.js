@@ -7,8 +7,8 @@ import {
   useElements,
 } from "@stripe/react-stripe-js";
 import "./app.css";
-import Navbar from "./navbar/navbar";
-import Tabs from "./tabs/tabs";
+import Navbar from "./components/navbar/navbar";
+import ProjectInfo from "./pages/projectInfo/projectInfo";
 
 const stripePublishableKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
 
@@ -129,7 +129,7 @@ const App = () => {
   return (
     <div>
       <Navbar />;
-      <Tabs />;
+      <ProjectInfo />;
     </div>
   );
 };
