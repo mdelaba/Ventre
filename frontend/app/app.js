@@ -7,7 +7,8 @@ import {
   useElements,
 } from "@stripe/react-stripe-js";
 import "./app.css";
-import DeliveryForm from "./deliveryForm";
+import Navbar from "./navbar/navbar";
+import Tabs from "./tabs/tabs";
 
 const stripePublishableKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
 
@@ -126,11 +127,10 @@ const Login = () => {
 
 const App = () => {
   return (
-    <Elements stripe={stripePromise}>
-      <Login />
-      <PaymentForm />
-      <DeliveryForm />
-    </Elements>
+    <div>
+      <Navbar />;
+      <Tabs />;
+    </div>
   );
 };
 
