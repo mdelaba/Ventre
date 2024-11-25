@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "../../components/tabs/tabs.module.css";
 import ManufactureType from "./manufactureType/manufactureType";
 import ProjectDescription from "./projectDescription/projectDescription";
+import UploadManufactureFiles from "./uploadManufactureFiles/uploadManufactureFiles";
 
 const ProjectInfo = () => {
   const [activeTab, setActiveTab] = useState(1);
@@ -27,13 +28,6 @@ const ProjectInfo = () => {
           Project Description
         </div>
         <div className={styles.divider}></div>
-        <div className={styles.divider}></div>
-        <div className={styles.divider}></div>
-        <div className={styles.divider}></div>
-        <div className={styles.divider}></div>
-        <div className={styles.divider}></div>
-        <div className={styles.divider}></div>
-
         <div
           className={`${styles.tab} ${activeTab === 3 ? styles.active : ""}`}
           onClick={() => handleTabClick(3)}
@@ -45,7 +39,7 @@ const ProjectInfo = () => {
       <div className={styles.tabContent}>
         {activeTab === 1 && <ManufactureType />}
         {activeTab === 2 && <ProjectDescription />}
-        {activeTab === 3 && <p>Content for Upload Manufacture Files</p>}
+        {activeTab === 3 && <UploadManufactureFiles />}
       </div>
     </div>
   );

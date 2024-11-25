@@ -32,7 +32,7 @@
 }
 
 .divider {
-  width: 2px; /* Thickness of the divider */
+  width: 1px; /* Thickness of the divider */
   height: 30px; /* Height of the divider */
   background-color: black; /* Color of the divider */
   margin: 5px 10px; /* Space around the divider */
