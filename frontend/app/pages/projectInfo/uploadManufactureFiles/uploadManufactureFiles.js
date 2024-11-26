@@ -50,6 +50,12 @@ const UploadManufactureFiles = () => {
     fileInputRef.current.click();
   };
 
+  // Handle the post action
+  const handlePost = () => {
+    // Logic to handle the post action (e.g., send the data to a server)
+    console.log("Posting files...");
+  };
+
   return (
     <div className="upload-container">
       {/* Just a label now, no functionality */}
@@ -98,6 +104,11 @@ const UploadManufactureFiles = () => {
           </ul>
         )}
       </div>
+
+      {/* Post Button */}
+      <button className="post-button" onClick={handlePost}>
+        Post &gt;
+      </button>
     </div>
   );
 };
