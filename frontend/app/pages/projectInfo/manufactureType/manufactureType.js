@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./manufactureType.css";
 
-const ManufactureType = () => {
+const ManufactureType = ({ updateTab }) => {
   // State for the first dropdown (Type)
   const [isTypeOpen, setIsTypeOpen] = useState(false);
   const [selectedType, setSelectedType] = useState("Select Option");
@@ -9,6 +9,9 @@ const ManufactureType = () => {
   // State for the second dropdown (Material)
   const [isMaterialOpen, setIsMaterialOpen] = useState(false);
   const [selectedMaterial, setSelectedMaterial] = useState("Select Option");
+
+  // State for the additional material description
+  const [materialDescription, setMaterialDescription] = useState("");
 
   // Refs for the dropdown containers
   const typeDropdownRef = useRef(null);
@@ -27,6 +30,10 @@ const ManufactureType = () => {
     setIsMaterialOpen(false); // Close the Material dropdown
   };
 
+  const handleMaterialDescriptionChange = (event) => {
+    setMaterialDescription(event.target.value);
+  };
+
   const handleClickOutside = (event) => {
     if (
       typeDropdownRef.current &&
@@ -40,6 +47,15 @@ const ManufactureType = () => {
     ) {
       setIsMaterialOpen(false); // Close Material dropdown if clicked outside
     }
+  };
+
+  // Handle the post action
+  const handleNext = () => {
+    // Logic to handle the post action (e.g., send the data to a server)
+    console.log("Next screen...");
+
+    // Call the function passed from the parent to update its state
+    updateTab(2);
   };
 
   useEffect(() => {
@@ -131,6 +147,27 @@ const ManufactureType = () => {
           )}
         </div>
       </div>
+
+      {/* Material Description Input */}
+      <div className="material-description-container">
+        <label
+          htmlFor="material-description"
+          className="material-description-label"
+        >
+          Additional Material Description (optional):
+        </label>
+        <textarea
+          id="material-description"
+          className="material-description-textarea"
+          placeholder="Add more specific information about the material you need..."
+          value={materialDescription}
+          onChange={handleMaterialDescriptionChange}
+        />
+      </div>
+
+      <button className="next-button" onClick={handleNext}>
+        Next &gt;
+      </button>
     </div>
   );
 };
