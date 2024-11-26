@@ -1,89 +1,143 @@
 .bids-display-container {
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Space between the table and image display */
-  align-items: flex-start; /* Align top of table and image display */
+  gap: 20px;
+  align-items: flex-start;
   padding: 20px;
 }
 
 .bids-container {
   display: flex;
   flex-direction: row;
-  gap: 40px; /* Gap between row boxes */
-  width: 90%; /* Adjust width for the table container */
+  gap: 40px;
+  width: 90%;
 }
 
 .row-box {
   display: flex;
   flex-direction: row;
-  gap: 20px; /* Space between values */
-  background-color: #f9f9f9; /* Box background color */
-  border: 1px solid #ddd; /* Border around each box */
-  border-radius: 8px; /* Rounded corners */
-  padding: 12px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  transition: background-color 0.2s ease;
+  gap: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px; /* Increased padding to make rows slightly wider */
+  width: 450px; /* Set a fixed width for the row */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.row-box-content {
+  display: flex;
+  gap: 20px;
+  transition: opacity 0.3s ease;
+}
+
+.row-box:hover .row-box-content {
+  opacity: 0.1; /* Much lower opacity for greater fade effect */
 }
 
 .row-box:hover {
-  background-color: #f1f1f1; /* Highlight row on hover */
+  background-color: #f1f1f1;
   cursor: pointer;
+}
+
+.button-container {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.row-box:hover .button-container {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.accept-button,
+.message-button {
+  padding: 7px 11px; /* Smaller padding for smaller buttons */
+  font-size: 14px; /* Smaller font size */
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.accept-button:hover,
+.message-button:hover {
+  background-color: #45a049;
+}
+
+.message-button {
+  background-color: #008cba;
+}
+
+.message-button:hover {
+  background-color: #007bb5;
 }
 
 .row-value {
   font-family: Arial, sans-serif;
-  color: black; /* Text color */
+  color: black;
   font-size: 14px;
-  white-space: nowrap; /* Prevent text wrapping */
+  white-space: nowrap;
 }
 
 .image-display {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30%; /* Adjust width for the image display */
-  height: 200px; /* Fixed height for the display box */
-  background-color: #eaeaea; /* Background color of the image display */
-  border: 1px solid #ccc; /* Border around the image display */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 100%;
+  height: 100%;
+  background-color: #eaeaea;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 10px;
-  text-align: center; /* Center text if no image */
+  text-align: center;
 }
 
 .image-display canvas {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain; /* Ensure the 3D object fits within the canvas */
-  background-color: #ffffff; /* White background for canvas */
-  border-radius: 5px; /* Optional: Rounded corners for canvas */
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: #ffffff;
+  border-radius: 5px;
 }
 
 .table-container {
   display: flex;
   flex-direction: column;
-  gap: 12px; /* Gap between row boxes */
-  width: 70%; /* Adjust width for the table container */
+  gap: 12px;
+  width: 70%;
 }
 
 .table-label {
   font-size: 16px;
   font-weight: bold;
-  color: black; /* Ensures consistent text color */
-  margin-bottom: 10px; /* Adds space between the label and table */
-  text-align: left; /* Align the label text to the left */
+  color: black;
+  margin-bottom: 10px;
+  text-align: left;
 }
 
 .divider-container {
   display: flex;
   align-items: center;
-  gap: 10px; /* Space between the divider and text */
+  gap: 10px;
 }
 
 .divider {
-  width: 3px; /* Thickness of the divider */
-  height: 25px; /* Height of the divider */
-  background-color: rgb(197, 197, 197); /* Color of the divider */
-  display: inline-block; /* So it can be inline with other content */
-  border-radius: 10px; /* Rounded edges */
+  width: 3px;
+  height: 25px;
+  background-color: rgb(197, 197, 197);
+  display: inline-block;
+  border-radius: 10px;
 }

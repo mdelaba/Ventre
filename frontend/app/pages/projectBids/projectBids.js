@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "../../components/tabs/tabs.module.css";
 import "./projectBids.css";
 import BidsDisplay from "./bidsDisplay/bidsDisplay";
+import AcceptedJob from "./acceptedJob/acceptedJob";
 
 const ProjectInfo = () => {
   const [activeTab, setActiveTab] = useState(1);
@@ -12,22 +13,22 @@ const ProjectInfo = () => {
 
   const sampleData = [
     {
-      input1: "Value 1A",
-      input2: "Value 2A",
-      input3: "Value 3A",
-      input4: "Value 4A",
+      printer: "Elegoo Neptune 3 Max",
+      rating: "4.5",
+      estimatedTime: "48 hours",
+      price: "$30",
     },
     {
-      input1: "Value 1B",
-      input2: "Value 2B",
-      input3: "Value 3B",
-      input4: "Value 4B",
+      printer: "Elegoo Neptune 3 Max",
+      rating: "4.5",
+      estimatedTime: "48 hours",
+      price: "$30",
     },
     {
-      input1: "Value 1C",
-      input2: "Value 2C",
-      input3: "Value 3C",
-      input4: "Value 4C",
+      printer: "Elegoo Neptune 3 Max",
+      rating: "4.5",
+      estimatedTime: "48 hours",
+      price: "$30",
     },
   ];
 
@@ -57,8 +58,8 @@ const ProjectInfo = () => {
       </div>
 
       <div className="project-content">
-        {activeTab === 1 && <BidsDisplay data={sampleData} />}
-        {activeTab === 2 && <p />}
+        {activeTab === 1 && <AcceptedJob />}
+        {activeTab === 2 && <BidsDisplay data={sampleData} />}
         {activeTab === 3 && <p />}
       </div>
     </div>

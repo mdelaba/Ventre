@@ -51,9 +51,8 @@ const UploadManufactureFiles = () => {
   };
 
   // Handle the post action
-  const handlePost = () => {
+  const handlePost = async () => {
     // Logic to handle the post action (e.g., send the data to a server)
-    console.log("Posting files...");
   };
 
   return (

@@ -10,6 +10,7 @@ import "./app.css";
 import Navbar from "./components/navbar/navbar";
 import ProjectInfo from "./pages/projectInfo/projectInfo";
 import ProjectBids from "./pages/projectBids/projectBids";
+import Sidebar from "./components/sidebar/sidebar";
 
 const stripePublishableKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
 
@@ -129,8 +130,10 @@ const Login = () => {
 const App = () => {
   return (
     <div>
-      <Navbar />;{/* <ProjectInfo />; */}
-      <ProjectBids />;
+      <Navbar />
+      {/* <Sidebar /> */}
+      {/* <ProjectInfo /> */}
+      <ProjectBids />
     </div>
   );
 };
