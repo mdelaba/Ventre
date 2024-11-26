@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import {
@@ -7,10 +8,10 @@ import {
   useElements,
 } from "@stripe/react-stripe-js";
 import "./app.css";
-import Navbar from "./components/navbar/navbar";
-import ProjectInfo from "./pages/projectInfo/projectInfo";
-import ProjectBids from "./pages/projectBids/projectBids";
-import Sidebar from "./components/sidebar/sidebar";
+import Navbar from "../components/navbar/navbar";
+import ProjectInfo from "./projectInfo/page";
+import ProjectBids from "./projectBids/page";
+import Sidebar from "../components/sidebar/sidebar";
 
 const stripePublishableKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
 
@@ -130,10 +131,7 @@ const Login = () => {
 const App = () => {
   return (
     <div>
-      <Navbar />
-      {/* <Sidebar /> */}
-      {/* <ProjectInfo /> */}
-      <ProjectBids />
+      <p>Home page</p>
     </div>
   );
 };

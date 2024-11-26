@@ -4,8 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  gap: 70px;
+  gap: 30px;
 }
 
 /* Info box for Time and Price */
@@ -13,9 +12,10 @@
   width: 90%;
   max-width: 600px;
   background-color: rgba(255, 255, 255, 0.9);
-  border: 2px solid #333;
+  border: 1px solid #333;
   border-radius: 10px;
   padding: 10px 20px;
+  margin-top: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,7 +41,7 @@
   font-size: 20px;
   font-weight: bold;
   color: #333;
-  margin-bottom: 40px; /* Added gap between label and images */
+  margin-bottom: 30px; /* Added gap between label and images */
 }
 
 /* Image frame container styles */
@@ -109,6 +109,7 @@
   display: flex;
   justify-content: center;
   gap: 10px;
+  margin-top: 10px;
 }
 
 .star-button {

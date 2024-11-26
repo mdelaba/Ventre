@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import styles from "../../components/tabs/tabs.module.css";
 import ManufactureType from "./manufactureType/manufactureType";
