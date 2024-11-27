@@ -15,7 +15,6 @@
 .dropdown-label {
   font-size: 16px;
   font-weight: bold;
-  color: #333;
 }
 
 .dropdown {
@@ -26,8 +25,6 @@
 }
 
 .dropdown-button {
-  background-color: #4caf50;
-  color: white;
   padding: 10px 20px;
   font-size: 16px;
   border: none;
@@ -40,7 +37,7 @@
 }
 
 .dropdown-button:hover {
-  background-color: #45a049;
+  background-color: #475047;
 }
 
 .dropdown-arrow {
@@ -52,8 +49,7 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: white;
-  border: 1px solid #ccc;
+  border: 1px solid;
   border-radius: 5px;
   width: 100%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -89,16 +85,14 @@
 .material-description-label {
   font-size: 16px;
   font-weight: bold;
-  color: #333;
 }
 
 .material-description-textarea {
   width: 100%;
   height: 100px; /* Adjust height as needed */
-  border: 2px solid #ccc; /* Border color */
+  border: 2px solid; /* Border color */
   border-radius: 5px; /* Optional: Rounded corners */
   background-color: transparent; /* Transparent background */
-  color: #000; /* Text color */
   font-size: 14px; /* Text size */
   font-family: Arial, sans-serif; /* Font style */
   padding: 10px; /* Padding inside the textarea */
@@ -114,10 +108,8 @@
 /* New styles for the Post button */
 .next-button {
   position: absolute;
-  bottom: 80px; /* Adjust this value to move the button further up/down */
-  right: 400px; /* Adjust this value to move the button further left/right */
-  background-color: #4caf50;
-  color: white;
+  bottom: 90px; /* Adjust this value to move the button further up/down */
+  right: 275px; /* Adjust this value to move the button further left/right */
   border: none;
   padding: 10px 20px;
   font-size: 16px;

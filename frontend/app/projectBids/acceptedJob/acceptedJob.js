@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./acceptedJob.css";
+import colours from "@/styles/colours";
 
 const AcceptedJob = () => {
   // State for image carousel
@@ -44,20 +45,45 @@ const AcceptedJob = () => {
   return (
     <div className="display-container">
       {/* Rectangular box for Time and Price */}
-      <div className="info-box">
-        <span className="info-label">Time: 48 hours</span>
-        <span className="info-label">Price: $20</span>
+      <div
+        className="info-box"
+        style={{
+          borderColor: colours.acceptedJobInfoBoxBackground,
+          borderColor: colours.acceptedJobInfoBoxBorder,
+        }}
+      >
+        <span
+          className="info-label"
+          style={{ color: colours.acceptedJobInfoLabelText }}
+        >
+          Time: 48 hours
+        </span>
+        <span
+          className="info-label"
+          style={{ color: colours.acceptedJobInfoLabelText }}
+        >
+          Price: $20
+        </span>
       </div>
 
       {/* Container for Product Photos label and image frames */}
       <div className="photos-container">
         {/* Label for Product Photos */}
-        <div className="photos-label">Product Photos</div>
+        <div className="photos-label" style={{ color: colours.smallHeading }}>
+          Product Photos
+        </div>
 
         {/* Carousel container for images and arrows */}
         <div className="carousel-container">
           {/* Arrow buttons */}
-          <button className="arrow-button left" onClick={handlePrev}>
+          <button
+            className="arrow-button left"
+            style={{
+              color: colours.acceptedJobArrowText,
+              backgroundColor: colours.acceptedJobArrowBackground,
+            }}
+            onClick={handlePrev}
+          >
             &lt;
           </button>
 
@@ -74,7 +100,14 @@ const AcceptedJob = () => {
           </div>
 
           {/* Arrow buttons */}
-          <button className="arrow-button right" onClick={handleNext}>
+          <button
+            className="arrow-button right"
+            style={{
+              color: colours.acceptedJobArrowText,
+              backgroundColor: colours.acceptedJobArrowBackground,
+            }}
+            onClick={handleNext}
+          >
             &gt;
           </button>
         </div>

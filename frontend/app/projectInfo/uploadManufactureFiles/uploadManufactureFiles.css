@@ -18,12 +18,11 @@
 .drop-area {
   width: 100%;
   height: 300px; /* Increased height for a larger drop area */
-  border: 2px dashed #ccc;
+  border: 2px dashed;
   border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #888;
   margin-bottom: 10px;
   cursor: pointer;
 }
@@ -33,7 +32,6 @@
 }
 
 .error-message {
-  color: red;
   font-size: 14px;
 }
 
@@ -49,8 +47,6 @@
 }
 
 .remove-button {
-  background-color: #ff6b6b;
-  color: white;
   border: none;
   border-radius: 5px;
   padding: 5px 10px;
@@ -67,8 +63,6 @@
   position: absolute;
   bottom: -50px; /* Adjust this value to move the button further up/down */
   right: -70px; /* Adjust this value to move the button further left/right */
-  background-color: #4caf50;
-  color: white;
   border: none;
   padding: 10px 20px;
   font-size: 16px;

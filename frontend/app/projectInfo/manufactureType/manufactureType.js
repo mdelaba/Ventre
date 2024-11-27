@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./manufactureType.css";
+import colours from "@/styles/colours";
 
 const ManufactureType = ({ updateTab }) => {
   // State for the first dropdown (Type)
@@ -69,20 +70,34 @@ const ManufactureType = ({ updateTab }) => {
     <div className="options-container">
       {/* Type Dropdown */}
       <div className="dropdown-container type-dropdown" ref={typeDropdownRef}>
-        <label htmlFor="type-dropdown" className="dropdown-label">
+        <label
+          htmlFor="type-dropdown"
+          className="dropdown-label"
+          style={{ color: colours.smallHeading }}
+        >
           Type:
         </label>
         <div className="dropdown">
           <button
             id="type-dropdown"
             className="dropdown-button"
+            style={{
+              backgroundColor: colours.dropdownBackground,
+              color: colours.dropdownText,
+            }}
             onClick={toggleTypeDropdown}
           >
             {selectedType}
             <span className="dropdown-arrow">▼</span>
           </button>
           {isTypeOpen && (
-            <ul className="dropdown-menu">
+            <ul
+              className="dropdown-menu"
+              style={{
+                backgroundColor: colours.dropdownMenuBackground,
+                borderColor: colours.dropdownMenuBorder,
+              }}
+            >
               <li
                 className="dropdown-item"
                 onClick={() => handleTypeOptionClick("3D Printing")}
@@ -105,20 +120,34 @@ const ManufactureType = ({ updateTab }) => {
         className="dropdown-container material-dropdown"
         ref={materialDropdownRef}
       >
-        <label htmlFor="material-dropdown" className="dropdown-label">
+        <label
+          htmlFor="material-dropdown"
+          className="dropdown-label"
+          style={{ color: colours.smallHeading }}
+        >
           Material:
         </label>
         <div className="dropdown">
           <button
             id="material-dropdown"
             className="dropdown-button"
+            style={{
+              backgroundColor: colours.dropdownBackground,
+              color: colours.dropdownText,
+            }}
             onClick={toggleMaterialDropdown}
           >
             {selectedMaterial}
             <span className="dropdown-arrow">▼</span>
           </button>
           {isMaterialOpen && (
-            <ul className="dropdown-menu">
+            <ul
+              className="dropdown-menu"
+              style={{
+                backgroundColor: colours.dropdownMenuBackground,
+                borderColor: colours.dropdownMenuBorder,
+              }}
+            >
               <li
                 className="dropdown-item"
                 onClick={() => handleMaterialOptionClick("ABS")}
@@ -153,19 +182,31 @@ const ManufactureType = ({ updateTab }) => {
         <label
           htmlFor="material-description"
           className="material-description-label"
+          style={{ color: colours.smallHeading }}
         >
           Additional Material Description (optional):
         </label>
         <textarea
           id="material-description"
           className="material-description-textarea"
+          style={{
+            borderColor: colours.textareaBorder,
+            color: colours.textareaText,
+          }}
           placeholder="Add more specific information about the material you need..."
           value={materialDescription}
           onChange={handleMaterialDescriptionChange}
         />
       </div>
 
-      <button className="next-button" onClick={handleNext}>
+      <button
+        className="next-button"
+        style={{
+          backgroundColor: colours.nextButtonBackground,
+          color: colours.nextButtonText,
+        }}
+        onClick={handleNext}
+      >
         Next &gt;
       </button>
     </div>

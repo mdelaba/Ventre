@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./UploadManufactureFiles.css";
+import colours from "@/styles/colours";
 
 const UploadManufactureFiles = () => {
   const [files, setFiles] = useState([]);
@@ -58,13 +59,18 @@ const UploadManufactureFiles = () => {
   return (
     <div className="upload-container">
       {/* Just a label now, no functionality */}
-      <label className="upload-label">
+      <label className="upload-label" style={{ color: colours.smallHeading }}>
         Upload Manufacture Files (STL only)
       </label>
 
       {/* Drag and Drop Area */}
       <div
         className="drop-area"
+        style={{
+          borderColor: colours.dropAreaBorder,
+          color: colours.dropAreaText,
+          backgroundColor: colours.dropAreaBackground,
+        }}
         onDrop={handleDrop}
         onDragOver={handleDragOver}
         onClick={handleDropAreaClick} // Open file dialog on click
@@ -83,7 +89,16 @@ const UploadManufactureFiles = () => {
         style={{ display: "none" }} // Hide the file input element
       />
 
-      {error && <p className="error-message">{error}</p>}
+      {error && (
+        <p
+          className="error-message"
+          style={{
+            color: colours.errorMessageText,
+          }}
+        >
+          {error}
+        </p>
+      )}
 
       <div className="file-list">
         {files.length > 0 && (
@@ -95,6 +110,10 @@ const UploadManufactureFiles = () => {
                   type="button"
                   onClick={() => handleRemoveFile(index)}
                   className="remove-button"
+                  style={{
+                    color: colours.removeButtonText,
+                    backgroundColor: colours.removeButtonBackground,
+                  }}
                 >
                   Remove
                 </button>
@@ -105,7 +124,14 @@ const UploadManufactureFiles = () => {
       </div>
 
       {/* Post Button */}
-      <button className="post-button" onClick={handlePost}>
+      <button
+        className="post-button"
+        style={{
+          backgroundColor: colours.nextButtonBackground,
+          color: colours.nextButtonText,
+        }}
+        onClick={handlePost}
+      >
         Post &gt;
       </button>
     </div>

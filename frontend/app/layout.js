@@ -3,6 +3,7 @@ import localFont from "next/font/local"; // Import the localFont function
 import "./globals.css"; // Assuming you have global styles
 import Navbar from "@/components/navbar/navbar";
 import Sidebar from "@/components/sidebar/sidebar";
+import colours from "@/styles/colours";
 
 // Define local fonts with correct paths
 const geistSans = localFont({
@@ -33,7 +34,10 @@ export default function RootLayout({ children }) {
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <div className="main-container">
           <Sidebar />
-          <div className="content-container">
+          <div
+            className="content-container"
+            style={{ backgroundColor: colours.mainBackground }}
+          >
             <Navbar />
             {children}
           </div>

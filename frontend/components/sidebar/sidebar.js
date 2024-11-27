@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState } from "react"; // Import useState hook
 import styles from "./sidebar.module.css";
 import routes from "../../app/routes";
+import colours from "../../styles/colours";
 
 const Sidebar = () => {
   // State to track the active link
@@ -13,11 +14,22 @@ const Sidebar = () => {
   };
 
   return (
-    <div className={styles.sidebar}>
+    <div
+      className={styles.sidebar}
+      style={{ backgroundColor: colours.sidebar }}
+    >
       {/* Wrap the button in a Link component */}
       <div className={styles.newProjectContainer}>
         <Link href={routes.newProject}>
-          <button className={styles.newProjectButton}>+ New Project</button>
+          <button
+            className={styles.newProjectButton}
+            style={{
+              backgroundColor: colours.sidebarButton,
+              color: colours.sidebarButtonText,
+            }}
+          >
+            + New Project
+          </button>
         </Link>
       </div>
       <ul>
@@ -25,13 +37,17 @@ const Sidebar = () => {
           className={activeLink === "home" ? styles.selected : ""}
           onClick={() => handleLinkClick("home")}
         >
-          <Link href={routes.home}>Home</Link>
+          <Link href={routes.home} style={{ color: colours.sidebarText }}>
+            Home
+          </Link>
         </li>
         <li
           className={activeLink === "projects" ? styles.selected : ""}
           onClick={() => handleLinkClick("projects")}
         >
-          <Link href={routes.myProjects}>My Projects</Link>
+          <Link href={routes.myProjects} style={{ color: colours.sidebarText }}>
+            My Projects
+          </Link>
         </li>
       </ul>
     </div>

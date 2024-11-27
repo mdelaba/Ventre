@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import * as THREE from "three";
 import { STLLoader } from "three/examples/jsm/loaders/STLLoader";
 import "./bidsDisplay.css";
+import colours from "@/styles/colours";
 
 const BidsDisplay = ({ data }) => {
   const [hoveredRowIndex, setHoveredRowIndex] = useState(null);
@@ -84,7 +85,9 @@ const BidsDisplay = ({ data }) => {
 
   return (
     <div className="bids-display-container">
-      <h2 className="table-label">Available Printers</h2>
+      <h2 className="table-label" style={{ color: colours.smallHeading }}>
+        Available Printers
+      </h2>
 
       <div className="bids-container">
         <div className="table-container">
@@ -92,6 +95,10 @@ const BidsDisplay = ({ data }) => {
             <div
               key={index}
               className="row-box"
+              style={{
+                backgroundColor: colours.bidsDisplayRowBoxBackground,
+                borderColor: colours.bidsDisplayRowBoxBorder,
+              }}
               onMouseEnter={() => setHoveredRowIndex(index)}
               onMouseLeave={() => setHoveredRowIndex(null)}
             >
@@ -103,17 +110,47 @@ const BidsDisplay = ({ data }) => {
                 ))}
               </div>
               <div className="button-container">
-                <button className="accept-button">Accept</button>
-                <button className="message-button">Message</button>
+                <button
+                  className="accept-button"
+                  style={{
+                    color: colours.bidsDisplayAcceptButtonText,
+                    backgroundColor: colours.bidsDisplayAcceptButtonBackground,
+                  }}
+                >
+                  Accept
+                </button>
+                <button
+                  className="message-button"
+                  style={{
+                    color: colours.bidsDisplayMessageButtonText,
+                    backgroundColor: colours.bidsDisplayMessageButtonBackground,
+                  }}
+                >
+                  Message
+                </button>
               </div>
             </div>
           ))}
         </div>
         <div className="divider-container">
-          <div className="divider" />
+          <div
+            className="divider"
+            style={{ backgroundColor: colours.bidsDisplayDividerBackground }}
+          />
         </div>
-        <div className="image-display">
-          <canvas ref={canvasRef} />
+        <div
+          className="image-display"
+          style={{
+            borderColor: colours.bidsDisplayImageDisplayBorder,
+            backgroundColor: colours.bidsDisplayImageDisplayBackground,
+          }}
+        >
+          <canvas
+            ref={canvasRef}
+            style={{
+              backgroundColor: colours.bidsDisplayImageCanvasBackground,
+            }}
+          />
         </div>
       </div>
     </div>
@@ -123,10 +160,10 @@ const BidsDisplay = ({ data }) => {
 BidsDisplay.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
-      input1: PropTypes.string.isRequired,
-      input2: PropTypes.string.isRequired,
-      input3: PropTypes.string.isRequired,
-      input4: PropTypes.string.isRequired,
+      printer: PropTypes.string.isRequired,
+      rating: PropTypes.string.isRequired,
+      estimatedTime: PropTypes.string.isRequired,
+      price: PropTypes.string.isRequired,
     })
   ).isRequired,
 };
