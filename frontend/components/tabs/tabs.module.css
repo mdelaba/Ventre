@@ -1,0 +1,36 @@
+.container {
+  width: 800px;
+  margin: 50px auto;
+  font-family: Arial, sans-serif;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  text-align: center;
+  flex: 1;
+}
+
+.active {
+  font-weight: bold;
+}
+
+.tabContent {
+  padding: 20px;
+  height: 600px;
+  border: 1px solid;
+  border-radius: 10px;
+}
+
+.divider {
+  width: 1px; /* Thickness of the divider */
+  height: 30px; /* Height of the divider */
+  margin: 5px 10px; /* Space around the divider */
+  display: inline-block; /* So it can be inline with other content */
+}

@@ -1,0 +1,133 @@
+.bids-display-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 20px;
+  width: 100%;
+}
+
+.bids-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 40px;
+  width: 90%;
+}
+
+.row-box {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 16px; /* Increased padding to make rows slightly wider */
+  width: 450px; /* Set a fixed width for the row */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.row-box-content {
+  display: flex;
+  gap: 50px;
+  transition: opacity 0.3s ease;
+}
+
+.row-box:hover .row-box-content {
+  opacity: 0.1; /* Much lower opacity for greater fade effect */
+}
+
+.row-box:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.button-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.row-box:hover .button-container {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.accept-button,
+.message-button {
+  padding: 7px 11px; /* Smaller padding for smaller buttons */
+  font-size: 14px; /* Smaller font size */
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.accept-button:hover {
+  background-color: #45a049;
+}
+
+.message-button:hover {
+  background-color: #007bb5;
+}
+
+.row-value {
+  font-family: Arial, sans-serif;
+  color: black;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.image-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border: 1px solid;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  text-align: center;
+}
+
+.image-display canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 70%;
+}
+
+.table-label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.divider-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.divider {
+  width: 3px;
+  height: 25px;
+  display: inline-block;
+  border-radius: 10px;
+}

@@ -1,0 +1,75 @@
+.upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  position: relative; /* This ensures the button is positioned relative to the container */
+}
+
+.upload-label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 30px; /* Increased spacing between label and drop area */
+  margin-top: 20px;
+}
+
+.drop-area {
+  width: 100%;
+  height: 300px; /* Increased height for a larger drop area */
+  border: 2px dashed;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.drop-area:hover {
+  background-color: #f9f9f9; /* Consider a slightly more prominent hover effect */
+}
+
+.error-message {
+  font-size: 14px;
+}
+
+.file-list {
+  margin-top: 10px;
+}
+
+.file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.remove-button {
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.remove-button:hover {
+  background-color: #ff4747;
+}
+
+/* New styles for the Post button */
+.post-button {
+  position: absolute;
+  bottom: -50px; /* Adjust this value to move the button further up/down */
+  right: -70px; /* Adjust this value to move the button further left/right */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.post-button:hover {
+  background-color: #45a049;
+}

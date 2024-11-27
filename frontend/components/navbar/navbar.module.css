@@ -1,0 +1,23 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.navbarRight {
+  display: flex;
+  align-items: center;
+}
+
+.navLink {
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 14px;
+}
